@@ -8,7 +8,6 @@
 //Ez(i    , j    ) -> Ez[i,j];
 //Hx(i    , j+0.5) -> Hx[i,j];
 //Hy(i+0.5, j    ) -> Hy[i,j];
-#define M_PI 3.1415926535897932384626433832795
 
 static double complex *Ez = NULL;
 static double complex *Jz = NULL;

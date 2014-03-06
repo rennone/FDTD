@@ -6,8 +6,6 @@
 #include "field.h"
 #include "models.h"
 
-#define M_PI 3.1415926535897932384626433832795
-
 //Ex(i+0.5,j) -> Ex[i,j]
 //Ey(i,j+0.5) -> Ey[i,j]
 //Hz(i+0.5,j+0.5) -> Hz[i,j]

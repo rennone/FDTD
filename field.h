@@ -17,7 +17,12 @@ typedef struct ntffInfo{
   int step;
 } ntffInfo;
 
-//シミュレーション上の物理定数 
+//シミュレーション上の物理定数
+#ifndef M_PI
+#define M_PI 3.1415926535897932384626433832795
+#endif
+
+#define C_S 0.7
 static const double LIGHT_SPEED_S = 0.7;
 static const double EPSILON_0_S = 1.0;
 static const double MU_0_S = 1.0/0.7/0.7;
