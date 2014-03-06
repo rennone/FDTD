@@ -13,9 +13,10 @@ find_package(OpenGL)
 
 set(CMAKE_C_FLAGS "-Wall -std=c99")
 
-#Debug Mode
-set(CMAKE_C_FLAGS_DEBUG "-g -DDEBUG")
-set(CMAKE_BUILD_TYPE debug)
+# set flag
+set(CMAKE_C_FLAGS_DEBUG "-g -DUSE_OPENGL")
+set(CMAKE_C_FLAGS_RELEASE "-g -DUSE_OPENGL")
+set(CMAKE_BUILD_TYPE release)
 
 include_directories(/opt/local/include)
 include_directories(~/glew-1.10.0/include)

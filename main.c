@@ -3,7 +3,7 @@
 #include "simulator.h"
 #include "field.h"
 
-#ifdef DEBUG
+#ifdef USE_OPENGL
 #include "drawer.h"
 #include <GL/glew.h>
 #include <GLUT/glut.h>
@@ -45,7 +45,7 @@ int main( int argc, char *argv[] )
   enum SOLVER solverType = TE_2D;        // 計算方法
   simulator_init(width, height, h_u, pml, lambda, step, modelType, solverType);    //simulator
     
-#ifdef DEBUG  
+#ifdef USE_OPENGL
     glutInit(&argc, argv);
     glutInitWindowSize(windowWidth, windowHeight);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
@@ -57,7 +57,7 @@ int main( int argc, char *argv[] )
     glutMainLoop();
 #endif
 
-#ifndef DEBUG
+#ifndef USE_OPENGL
     while(1)
     {
       simulator_calc(); //only calculate mode

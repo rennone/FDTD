@@ -2,9 +2,7 @@
 #define _DRAWER_H
 #include <complex.h>
 
-//#define DEBUG
-
-#ifdef DEBUG
+#ifdef USE_OPENGL
 
 enum COLOR_MODE{
   CREAL,
@@ -16,6 +14,6 @@ extern void drawer_paintModel(int l, int b, int r, int t,int wid, int hei, doubl
 extern void drawer_init(enum COLOR_MODE);
 extern void drawer_finish(void);
 extern void drawer_draw(void);
-#endif //DEBUG
+#endif //USE_OPENGL
 
 #endif //_DRAWER_H
