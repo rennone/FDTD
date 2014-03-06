@@ -1,7 +1,5 @@
+#ifdef DEBUG
 #include "drawer.h"
-
-#ifdef _USE_OPENGL
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -170,4 +168,4 @@ static void colorTransform(double phi, colorf *col)
   col->g = min(1.0, max(0.0, -3*ab_phi+2));
 }
 
-#endif
+#endif //DDEBUG

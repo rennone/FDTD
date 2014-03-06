@@ -1,24 +1,14 @@
-#include "drawer.h"
-
 #include <stdio.h>
 #include <stdlib.h>
-
-#ifdef _USE_OPENGL
-#include <GL/glew.h>
-#include <GLUT/glut.h>
-#endif
-
 #include "simulator.h"
-
 #include "field.h"
 
-void display(void);
-void idle(void);
-
-void display(void)
+#ifdef DEBUG
+#include "drawer.h"
+#include <GL/glew.h>
+#include <GLUT/glut.h>
+void display()
 {
-  #ifdef _USE_OPENGL
-  //todo gl method should be remove here, go to drawer.c
   glEnableClientState( GL_VERTEX_ARRAY );
   glEnableClientState( GL_TEXTURE_COORD_ARRAY );
 
@@ -29,18 +19,14 @@ void display(void)
   glDisableClientState( GL_VERTEX_ARRAY );
   glDisableClientState( GL_TEXTURE_COORD_ARRAY );
   glutSwapBuffers();
-  
-  #endif
 }
 
-void idle(void)
+void idle()
 {
-  simulator_calc();
-  
-  #ifdef _USE_OPENGL
+  simulator_calc();  
   glutPostRedisplay();  //再描画
-  #endif
 }
+#endif
 
 const int windowX = 100;
 const int windowY = 100;
@@ -59,7 +45,7 @@ int main( int argc, char *argv[] )
   enum SOLVER solverType = TE_2D;        // 計算方法
   simulator_init(width, height, h_u, pml, lambda, step, modelType, solverType);    //simulator
     
-#ifdef _USE_OPENGL  
+#ifdef DEBUG  
     glutInit(&argc, argv);
     glutInitWindowSize(windowWidth, windowHeight);
     glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
@@ -67,17 +53,14 @@ int main( int argc, char *argv[] )
     glutDisplayFunc(display);
     glutIdleFunc(idle);
     glewInit();
-
-
     drawer_init(CABS);  //drawerの初期化      /* CREAL : 振幅表示, CABS : 強度表示 */
     glutMainLoop();
 #endif
 
-#ifndef _USE_OPENGL
-    //only calculate mode  
+#ifndef DEBUG
     while(1)
     {
-      simulator_calc(); 
+      simulator_calc(); //only calculate mode
     }    
 #endif
   
