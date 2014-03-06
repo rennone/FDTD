@@ -2,7 +2,7 @@
 #define _DRAWER_H
 #include <complex.h>
 
-#define _USE_OPENGL
+//#define _USE_OPENGL
 
 #ifdef _USE_OPENGL
 enum COLOR_MODE{
