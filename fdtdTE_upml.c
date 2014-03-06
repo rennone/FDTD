@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -6,6 +5,8 @@
 #include "fdtdTE_upml.h"
 #include "field.h"
 #include "models.h"
+
+#define M_PI 3.1415926535897932384626433832795
 
 //Ex(i+0.5,j) -> Ex[i,j]
 //Ey(i,j+0.5) -> Ey[i,j]
