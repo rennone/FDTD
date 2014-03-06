@@ -27,12 +27,12 @@ static ntffInfo ntff_info;
 
 
 //:public------------------------------------//
-inline double field_toCellUnit(const double phisycalUnit)
+double field_toCellUnit(const double phisycalUnit)
 {
   return phisycalUnit/H;   //セル単位に変換 
 }
 
-inline double field_toPhisycalUnit(const double cellUnit)
+double field_toPhisycalUnit(const double cellUnit)
 {
   return cellUnit*H;    //物理単位(nm)に変換
 }
@@ -70,43 +70,43 @@ void setField(const int wid, const int hei, const int _h, const int pml, const d
   
 
 //-------------------getter-------------------//
-double inline field_getLambda()
+double  field_getLambda()
 {
   return lambda_s;
 }
 
-double inline field_getWaveAngle()
+double  field_getWaveAngle()
 {
   return waveAngle;
 }
 
-double inline field_getTime()
+double  field_getTime()
 {
   return time;
 }
 
-double inline field_getMaxTime()
+double  field_getMaxTime()
 {
   return maxTime;
 }
 
 
-inline double field_getOmega(void)
+ double field_getOmega(void)
 {
   return w_s;
 }
 
-inline double field_getK(void)
+ double field_getK(void)
 {
   return k_s;
 }
 
-inline double field_getRayCoef(void)
+ double field_getRayCoef(void)
 {
   return ray_coef;
 }
 
-ntffInfo inline field_getNTFFInfo()
+ntffInfo  field_getNTFFInfo()
 {
   return ntff_info;
 }
@@ -153,7 +153,7 @@ double field_pmlCoef_LXY(double ep_mu, double sig)
 }
 
 //1次元配列に変換
-inline int ind(const int i, const int j)
+int ind(const int i, const int j)
 {
   // return i*N_PY + j;
   return i*N_PY + j;

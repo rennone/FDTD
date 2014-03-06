@@ -1,8 +1,8 @@
-#define USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-//#include <sys/stat.h>
+
 #include "fdtdTM_upml.h"
 #include "field.h"
 #include "models.h"
@@ -42,7 +42,6 @@ static void init(void);
 
 static inline void calcJD(void);
 static inline void calcE(void);
-
 
 static inline void calcMB(void);
 static inline void calcH(void);

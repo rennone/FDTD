@@ -55,14 +55,14 @@ extern bool field_nextStep(void);
 
 
 //:getter
-extern inline double field_getLambda(void);
-extern inline double field_getWaveAngle(void);
-extern inline double field_getTime(void);
-extern inline double field_getMaxTime(void);
-extern inline ntffInfo field_getNTFFInfo(void);
-extern inline double field_getOmega(void);
-extern inline double field_getK(void);
-extern inline double field_getRayCoef(void);
+extern double field_getLambda(void);
+extern double field_getWaveAngle(void);
+extern double field_getTime(void);
+extern double field_getMaxTime(void);
+extern ntffInfo field_getNTFFInfo(void);
+extern double field_getOmega(void);
+extern double field_getK(void);
+extern double field_getRayCoef(void);
 
 //:setter
 extern void field_setDefaultIncidence(enum WAVE_MODE wm);
@@ -71,16 +71,4 @@ extern void field_setDefaultIncidence(enum WAVE_MODE wm);
 extern void field_outputElliptic(const char *fileName,double complex* data, double ox, double oy, double r); //
 extern void field_outputAllData(const char *fileName,double complex* data); //
 
-//--------------------for debug--------------------//
-static inline void field_debugPrint(double complex *A)
-{
-  int i,j;
-  for(i=1; i<N_PX; i++){
-    for(j=1; j<N_PY; j++){
-      double complex a = A[ind(i,j)];
-      if(creal(a) > 1.0)
-	printf("(%d, %d) : %lf \n", i, j, creal(a));
-    }
-  }
-}
 #endif

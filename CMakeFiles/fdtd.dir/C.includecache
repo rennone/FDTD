@@ -20,24 +20,6 @@ field.h
 
 /Users/REN/git/Research/FDTD/circleModel.h
 
-/Users/REN/git/Research/FDTD/drawer.c
-drawer.h
-/Users/REN/git/Research/FDTD/drawer.h
-stdio.h
--
-stdlib.h
--
-string.h
--
-math.h
--
-GL/glew.h
--
-GLUT/glut.h
--
-function.h
-/Users/REN/git/Research/FDTD/function.h
-
 /Users/REN/git/Research/FDTD/drawer.h
 complex.h
 -
