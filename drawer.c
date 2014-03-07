@@ -126,7 +126,6 @@ void drawer_paintImage(int left, int bottom, int right, int top, int width, int 
 //todo 可変長引数を利用して, 複数のデータの平均で色を出すようにするべき?
 void drawer_paintModel(int left, int bottom, int right, int top, int width, int height, double *phis, ...)
 {
-  colorf c;
   double dphi;
   double ux = 1.0*(right-left)/TEX_NX;
   double uy = 1.0*(top-bottom)/TEX_NY;

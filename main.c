@@ -40,10 +40,11 @@ int main( int argc, char *argv[] )
   double   h_u  = 1;   //1セルの大きさ(nm)
   int       pml = 10;  //pmlレイヤの数
   double lambda = 60;  //波長(nm)
-  int      step = 2000; //計算ステップ 
+  int      step = 2000; //計算ステップ
+  int waveAngle = 0;
   enum MODEL   modelType = MIE_CYLINDER; // モデルの種類
   enum SOLVER solverType = TE_2D;        // 計算方法
-  simulator_init(width, height, h_u, pml, lambda, step, modelType, solverType);    //simulator
+  simulator_init(width, height, h_u, pml, lambda, waveAngle, step, modelType, solverType);    //simulator
     
 #ifdef USE_OPENGL
     glutInit(&argc, argv);

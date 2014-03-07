@@ -13,6 +13,7 @@ int H;
 int N_PML;
 int N_PX;
 int N_PY;
+
 static double time;
 static double ray_coef; //波をゆっくり入れる為の係数;
 static double waveAngle;
@@ -37,7 +38,7 @@ double field_toPhisycalUnit(const double cellUnit)
   return cellUnit*H;    //物理単位(nm)に変換
 }
 
-void setField(const int wid, const int hei, const int _h, const int pml, const double lambda, double maxstep)
+void setField(const int wid, const int hei, const int _h, const int pml, const double lambda, const int wave_angle,double maxstep)
 {
   H = _h;
   N_X = wid / _h;
@@ -55,7 +56,7 @@ void setField(const int wid, const int hei, const int _h, const int pml, const d
   T_s = 2*M_PI/w_s;
 
   ray_coef = 0;  
-  waveAngle = 0;
+  waveAngle = wave_angle;
 
   /* NTFF設定 */
   ntff_info.top = N_PY - N_PML - 5;

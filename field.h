@@ -40,7 +40,7 @@ extern int N_PY;
 extern inline int ind(const int, const int);
 
 //フィールドの横,縦の大きさ, 1セルのサイズ, pmlレイヤの数, 波長(nm), 計算ステップ
-extern void setField(const int wid, const int hei, const int h, const int pml, const double lambda, const double step);
+extern void setField(const int wid, const int hei, const int h, const int pml, const double lambda, const int waveAngle, const double step);
 
 //pml用のσを取ってくる
 extern double field_sigmaX(double x, double y);

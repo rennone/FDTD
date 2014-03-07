@@ -122,10 +122,10 @@ void simulator_calc()
   }
 }
 
-void simulator_init(int width, int height , double h_u, int pml, double lambda, int step,  enum MODEL modelType, enum SOLVER solverType)
+void simulator_init(int width, int height , double h_u, int pml, double lambda, int waveAngle, int step,  enum MODEL modelType, enum SOLVER solverType)
 {
   //横幅(nm), 縦幅(nm), 1セルのサイズ(nm), pmlレイヤの数, 波長(nm), 計算ステップ
-  setField(width, height, h_u, pml, lambda, step); //必ず最初にこれ
+  setField(width, height, h_u, pml, lambda, waveAngle, step); //必ず最初にこれ
 
   /*NO_MODEL. MIE_CYLINDER, SHELF, NONSHELF*/
   setModel(modelType);  //次にこれ,  モデル(散乱体)を定義

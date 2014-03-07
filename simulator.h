@@ -11,7 +11,7 @@ enum SOLVER{
   TE_UPML_2D,
 };
 
-extern void simulator_init(int width, int height , double h_u, int pml, double lambda, int step, enum MODEL model, enum SOLVER solver);
+extern void simulator_init(int width, int height , double h_u, int pml, double lambda, int waveAngle, int step, enum MODEL model, enum SOLVER solver);
 extern void simulator_calc(void);
 extern double complex* simulator_getDrawingData();
 extern double * simulator_getEps();
