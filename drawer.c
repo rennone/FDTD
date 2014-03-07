@@ -1,4 +1,5 @@
 #ifdef USE_OPENGL
+
 #include "drawer.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,7 +7,6 @@
 #include <math.h>
 #include <GL/glew.h>
 #include <GLUT/glut.h>
-
 #include "function.h"
 
 typedef struct {
@@ -168,4 +168,4 @@ static void colorTransform(double phi, colorf *col)
   col->g = min(1.0, max(0.0, -3*ab_phi+2));
 }
 
-#endif //DDEBUG
+#endif //USE_OPENGL
