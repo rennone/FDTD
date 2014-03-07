@@ -1,0 +1,39 @@
+#要求するcmakeのバージョン
+cmake_minimum_required(VERSION 2.8)
+
+file(GLOB srcFile ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
+
+#プロジェクト名
+project(fdtd)
+
+#GLUT, OpenGLのフォルダを見つける?
+
+find_package(GLUT)
+include_directories(${GLUT_INCLUDE_DIR})
+link_directories(${GLUT_LIBRARY_DIR})
+
+find_package(GLEW)
+include_directories(${GLEW_INCLUDE_DIR})
+link_directories(${GLEW_LIBRARY_DIR})
+
+find_package(OpenGL)
+include_directories(${OPENGL_INCLUDE_DIR})
+link_directories(${OPENGL_LIBRARY_DIR})
+
+set(CMAKE_C_FLAGS "-Wall -std=c99 -lglut -lGLU -lGL")
+
+# set flag
+set(CMAKE_C_FLAGS_DEBUG "-g -DUSE_OPENGL")
+set(CMAKE_C_FLAGS_RELEASE "-g -DUSE_OPENGL")
+set(CMAKE_BUILD_TYPE release)
+
+include_directories(/usr/include)
+
+#include_directories(~/glew-1.10.0/include)
+link_directories(/usr/lib)
+add_executable(fdtd ${srcFile})
+
+#target_link_libraries(fdtd /System/Library/Frameworks/GLUT.framework ${OPENGL_LIBRARY} m)
+target_link_libraries(fdtd GLEW.a)
+target_link_libraries(fdtd glut GLU GL m)
+
