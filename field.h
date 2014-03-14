@@ -2,6 +2,7 @@
 #define _FIELD_H
 #include <stdio.h>
 #include <complex.h>
+#include <math.h>
 #include "bool.h"
 
 //入射波のモード
